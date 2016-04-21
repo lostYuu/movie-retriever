@@ -1,0 +1,31 @@
+<h1 class="page-header">{{title}}</h1>
+<div class="list-group">
+  <div class="list-group">
+    <a ng-repeat="movie in movies track by $index" href="#/details/{{movie.id}}" class="list-group-item">
+      <div class="media">
+        <div class="media-left">
+          <img class="media-object" ng-src="{{movie.images.small}}" alt="{{movie.title}}">
+        </div>
+        <div class="media-body">
+          <span class="badge pull-right">42</span>
+          <h3 class="media-heading">{{movie.title}}</h3>
+          <p>类型：<span>{{movie.genres.join('、')}}</span>&nbsp;&nbsp;&nbsp;&nbsp;上映年份：<span>{{movie.year}}</span></p>
+          <p>导演：<span ng-repeat="d in movie.directors">{{d.name + ($last ? '' : '、')}}</span></p>
+          <p>主演：<span ng-repeat="c in movie.casts">{{c.name + ($last ? '' : '、')}}</span></p>
+        </div>
+      </div>
+    </a>
+    <p class="bottom-info" ng-show="!loading">总共：{{totalCount}}条信息，第{{page}}/{{totalPage}}页</p>
+    <nav ng-if="!loading">
+      <ul class="pager">
+        <li ng-class="{disabled: page < 2}"><a href="#/coming_soon/{{page - 1}}">上一页</a></li>
+        <li ng-class="{disabled: page >= totalPage}"><a href="#/coming_soon/{{page + 1}}">下一页</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+<div class="loadingWrap" ng-if="loading">
+  <div class="spinner"></div>
+</div>

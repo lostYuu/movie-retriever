@@ -1,0 +1,11 @@
+<h1 class="page-header">{{title}}</h1>
+<div class="details-summary">
+  <div>
+    <img ng-src="{{movie.images.large}}" alt="{{title}}"/>
+  </div>
+  <p>{{movie.summary}}</p>
+</div>
+<div class="loadingWrap" ng-if="loading">
+  <div class="spinner"></div>
+</div>
+

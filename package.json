@@ -1,0 +1,22 @@
+{
+  "name": "Movie-Retriever",
+  "version": "1.0.0",
+  "description": "App for retrieving movies",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "./node_modules/.bin/hs -a localhost -p 5000 -o"
+  },
+  "keywords": [
+    "lostyuu",
+    "Movie-Retriever",
+    "Movie Retriever",
+    "Angular"
+  ],
+  "author": "lostyuu",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
