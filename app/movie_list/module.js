@@ -33,6 +33,7 @@
             q: $routeParams.q
           },
           function(data) {
+            console.log(data);
             $scope.loading = false;
             $scope.totalCount = data.total;
             $scope.totalPage = Math.ceil(data.total/count);
